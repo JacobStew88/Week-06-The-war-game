@@ -25,6 +25,19 @@ public class Deck extends ArrayList<Card> {
 	public void shuffle() {
 		Collections.shuffle(this);
 		}
+	
+	public void deal(Deck deck, Player player1, Player player2) {
+		int size = deck.size();
+		for (int i = 0; i < size; i++) {
+			if(i % 2 == 0) {
+				player1.draw(deck);
+			}
+			else {
+				player2.draw(deck);
+			}
+		}
+		
+	}
 
 	@Override
 	public String toString() {

@@ -11,6 +11,10 @@ public class Card {
 		this.cardValue = cardValue;
 	}
 	
+	public void describe() {
+		System.out.println(this.toString() + "\n");
+	}
+	
 	@Override
 	public String toString() {
 		return suit + " of " + cardName;

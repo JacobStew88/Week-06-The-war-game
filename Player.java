@@ -1,8 +1,11 @@
 package The_War_Game;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Player {
 	private String name;
-	private Hand hand = new Hand();
+	List<Card> hand = new ArrayList<Card>();
 	private int score;
 	
 	 Player(String name) {
@@ -20,9 +23,9 @@ public class Player {
 	public void draw(Deck deck) {
 		hand.add(deck.remove(0));	
 	}
-	public Hand getHand() {
-		return hand;
-	}
+	//public Hand getHand() {
+		//return hand;
+	//}
 	public Card flip() {
 		return hand.remove(0);
 	}
@@ -36,22 +39,16 @@ public class Player {
 	public String toString() {
 		return name;
 	}
-	
-		public String toString1() {
-			StringBuilder sb1 = new StringBuilder();
-			String extraLine = System.lineSeparator();
-			sb1.append("List of Cards: ").append((extraLine));
-			
-			for (Card card : hand) {
-			sb1.append(" ").append(card).append(extraLine);
-			}
-		return sb1.toString();
-		}
-
+	public void describe() {
+		System.out.println("\nPlayer " + name + " has this " + hand );
 		
-
-		
-
-		
-		
+	}	
 }
+
+		
+
+		
+
+		
+		
+
